@@ -7,12 +7,18 @@ module.exports =
   index: (req, res) ->
     Post.find {}, (err, posts) ->
       res.send posts
+
+  # Creates new post with data from `req.body`
+  new: (req, res) ->
+    res.render 'posts/new',
+      title: "New Match"  
       
   # Creates new post with data from `req.body`
   create: (req, res) ->
-    post = new Post req.body
+    post = new Post req.body.post
     post.save (err, post) ->
       if not err
+        console.log post
         res.send post
         res.statusCode = 201
       else
