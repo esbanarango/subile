@@ -1,3 +1,6 @@
-$ ->
-  x = -> $('<h2>Express Coffee Template 1.4</h2>').prependTo('.right')
-  setTimeout x, 500
+"use strict"
+
+app = angular.module("subile", ["subile.controllers", "subile.filters", "subile.directives", "subile.services"])
+app.config ["$routeProvider", ($routeProvider) ->
+  
+]

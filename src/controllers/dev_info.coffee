@@ -4,6 +4,9 @@ exports.index = (req, res) ->
   data = {"hello":["world"]}
   res.send data
   
+exports.info = (req, res) ->
+  res.render 'dev-info'
+
 # Sends anything from request back as JSON
 exports.pong = (req, res) ->
   # Create ping-pong response from received data
