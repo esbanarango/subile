@@ -14,14 +14,14 @@ block content
       #playing
 
       div(ng-controller='SearchCtrl')
-        form#dj
+        form#dj(ng-submit="search()")
           h3 Search songs
-          input#s(type='text')
+          input#s(type='text', ng-model="query")
           button Search
           ul#results
             li(ng-repeat='song in songs')
-              | {{song.SongName}}          
-
+              | {{song.ArtistName}}- <b> {{song.SongName}} </b>
+              a(ng-click='play(song)') Play
 
   script#widget-template(type='text/x-handlebars-template')
     object(type='application/x-shockwave-flash', data='http://grooveshark.com/songWidget.swf', width='250', height='40')

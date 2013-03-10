@@ -43,7 +43,7 @@ module.exports = (server, app) ->
 
     socket.on "search", (q, fn) ->
       request "http://tinysong.com/s/" + encodeURIComponent(q) + "?key=" + config.API_TINY_KEY + "&format=json", (res) ->
-        fn JSON.parse(res.text), dj is socket  if 200 is res.status
+        fn JSON.parse(res.text) if 200 is res.status
 
 
     socket.on "text", (msg, fn) ->
