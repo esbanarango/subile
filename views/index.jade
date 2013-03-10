@@ -5,10 +5,13 @@ block content
       .navbar-inner
         a.brand(href='#/') Subile   
     .span7
-      #chat
+      #chat(ng-controller='ChatCtrl')
         ul#messages
-        form#form
-          input#input(type='text')
+          li(ng-repeat='message in messages',title="{{message.date | date:'MM/dd/yyyy @ h:mma' }}")
+            b(ng-show="message.from"){{message.from}}: 
+            | {{message.text}}        
+        form#form(ng-submit="newMessage()")
+          input#input(type='text', ng-model="message.text")
           button Send
 
       #playing

@@ -10,12 +10,15 @@ head
   meta(name='author', content='')
   // Mobile Specific
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
-
+  style
+    [ng-cloak] {
+      display: none;
+      }
   // CSS
   != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css")
   != css('app')
   
-body
+body(ng-cloak='ng-cloak')
   block content
 
   // Load jQuery
