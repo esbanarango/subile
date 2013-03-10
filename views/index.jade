@@ -5,4 +5,18 @@ block content
       .navbar-inner
         a.brand(href='#/') Subile   
     .span7
-      div(ng-view='ng-view')    
+      div(ng-view='ng-view')
+
+      #chat
+        ul#messages
+          form#form
+            input#input(type='text')
+            button Send
+
+      #playing
+        
+      form#dj
+        h3 Search songs
+        input#s(type='text')
+        ul#results
+        button Search

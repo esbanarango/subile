@@ -1,8 +1,8 @@
 
-express = require 'express'
-stylus = require 'stylus'
-assets = require 'connect-assets'
-mongoose = require 'mongoose'
+express   = require 'express'
+stylus    = require 'stylus'
+assets    = require 'connect-assets'
+mongoose  = require 'mongoose'
 
 #### Basic application initialization
 # Create app instance.

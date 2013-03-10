@@ -13,6 +13,7 @@ exports.setEnvironment = (env) ->
 			exports.DB_NAME = 'mvc_example'
 			exports.DB_USER = 'root'
 			exports.DB_PASS = 'root'
+			exports.API_TINY_KEY = "d6af4409f6ea1cb032ceb5309617265d"
 
 		when "testing"
 			exports.DEBUG_LOG=true
