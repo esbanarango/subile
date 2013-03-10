@@ -1,30 +1,31 @@
 extends layout
 block content
-  .container(ng-controller='AppCtrl')
-    .navbar
-      .navbar-inner
-        a.brand(href='#/') Subile   
-    .span7
-      #chat(ng-controller='ChatCtrl')
-        ul#messages
-          li(ng-repeat='message in messages',title="{{message.date | date:'MM/dd/yyyy @ h:mma' }}")
-            b(ng-show="message.from"){{message.from}}: 
-            | {{message.text}}        
-        form#form(ng-submit="newMessage()")
-          input#input(type='text', ng-model="message.text")
-          button Send
-
-      #playing
-
-      div(ng-controller='SearchCtrl')
-        form#dj(ng-submit="search()")
-          h3 Search songs
-          input#s(type='text', ng-model="query")
-          button Search
+  .container-fluid(ng-controller='AppCtrl')
+    .row-fluid
+      .span5.left-side-controls
+        #playing
+        div(ng-controller='SearchCtrl')
+          form#dj(class="form-horizontal",ng-submit="search()")
+            h3 Search songs
+            input#s(class="input-medium",type='text',placeholder="Octavi mesa...", ng-model="query")
+            button.btn.btn-inverse(href='#')
+              i.icon-search
+                |  Search
           ul#results
             li(ng-repeat='song in songs')
+              a.play-button(ng-click='play(song)')
+                i.icon-play-circle
               | {{song.ArtistName}}- <b> {{song.SongName}} </b>
-              a(ng-click='play(song)') Play
+
+      .span7.center-container
+        #chat(ng-controller='ChatCtrl')
+          ul#messages
+            li(ng-repeat='message in messages',title="{{message.date | date:'MM/dd/yyyy @ h:mma' }}")
+              b(ng-show="message.from"){{message.from}}: 
+              | {{message.text}}        
+          form#form(class="form-horizontal",ng-submit="newMessage()")
+            input#input(type='text', ng-model="message.text")
+            button.btn Send
 
   script#widget-template(type='text/x-handlebars-template')
     object(type='application/x-shockwave-flash', data='http://grooveshark.com/songWidget.swf', width='250', height='40')

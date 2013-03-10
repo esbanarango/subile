@@ -1,7 +1,38 @@
 @import 'nib'
 
-.container
-  margin-top 60px
+body
+  height: 100%
+  width: 100%
+  position: absolute
+
+.row-fluid 
+  height: inherit 
+
+.container-fluid 
+  padding-right: 0px
+  padding-left: 0px
+  min-height: 100%
+  height: inherit 
+
+
+.left-side-controls
+  color: #eee
+  background-color: #333
+  width: 30%
+  padding: 0 3%
+  height: 100%
+
+.center-container
+  margin-left: 36%
+  padding: 0.1em 2%
+
+#results
+  list-style-type: none
+  margin-left: 0.2em;
+
+.play-button
+  cursor: pointer
+  font-size: 28px
 
 h2
   smooth-button()
@@ -18,4 +49,22 @@ pre
   margin-bottom: 20px
   padding: 10px
   border: 1px solid black
-  
+
+input
+  margin-right: 5px
+
+@media (max-width: 767px)
+
+  body 
+    padding-left: 0px
+    padding-right: 0px
+
+  .row-fluid 
+    height: auto 
+
+  .container-fluid 
+    height: auto 
+
+
+
+

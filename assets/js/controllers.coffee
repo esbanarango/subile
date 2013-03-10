@@ -15,7 +15,7 @@ ctrls.controller 'AppCtrl', ($scope, $http, socket) ->
   $scope.play = (song)->
     socket.emit 'play', song
     playing = $('#playing')
-    playing.html "<hr><b>Now Playing: </b> #{song.ArtistName}  #{song.SongName}<br>"
+    playing.html "<b>Now Playing: </b> #{song.ArtistName}  #{song.SongName}<br>"
     source = $("#widget-template").html()
     template = Handlebars.compile(source)
     obj = template(song)    
