@@ -1,25 +1,26 @@
 extends layout
 block content
-  .container
+  .container(ng-controller='AppCtrl')
     .navbar
       .navbar-inner
         a.brand(href='#/') Subile   
     .span7
-      div(ng-view='ng-view')
-
       #chat
         ul#messages
-          form#form
-            input#input(type='text')
-            button Send
+        form#form
+          input#input(type='text')
+          button Send
 
       #playing
 
-      form#dj
-        h3 Search songs
-        input#s(type='text')
-        ul#results
-        button Search
+      div(ng-controller='SearchCtrl')
+        form#dj
+          h3 Search songs
+          input#s(type='text')
+          button Search
+          ul#results
+            li(ng-repeat='song in songs')
+              | {{song.SongName}}          
 
 
   script#widget-template(type='text/x-handlebars-template')
