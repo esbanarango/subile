@@ -2,7 +2,7 @@ Subile
 ======
 >¡Subile volumen!
 
-This is an experiment in music streaming. it uses the [Tinysong API](http://tinysong.com/api) to search the songs, and the [flash widget](http://developers.grooveshark.com/tuts/widgets) to play the music.
+This is an experiment in music streaming. it uses the [Tinysong API](http://tinysong.com/api) to search the songs, and the [flash widget](http://developers.grooveshark.com/tuts/widgets) from Grooveshark to play the music.
 
 ## Technologies
 
