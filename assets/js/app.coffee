@@ -46,11 +46,11 @@ $ ->
   play = (song) ->
     return unless song
     playing.html "<hr><b>Now Playing: </b> #{song.ArtistName}  #{song.SongName}<br>"
-    iframe = $('<iframe>', 
-      'src': song.Url
-      'frameborder':'0'
-      )
-    playing.append iframe
+    
+    source = $("#widget-template").html()
+    template = Handlebars.compile(source)
+    obj = template(song)    
+    playing.append obj
 
   socket.on 'song', play
 

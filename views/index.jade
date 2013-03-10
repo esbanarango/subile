@@ -14,9 +14,16 @@ block content
             button Send
 
       #playing
-        
+
       form#dj
         h3 Search songs
         input#s(type='text')
         ul#results
         button Search
+
+
+  script#widget-template(type='text/x-handlebars-template')
+    object(type='application/x-shockwave-flash', data='http://grooveshark.com/songWidget.swf', width='250', height='40')
+      param(name='wmode', value='window')
+      param(name='allowScriptAccess', value='always')
+      param(name='flashvars', value='hostname=grooveshark.com&songID={{SongID}}&style=metal&p=1')
