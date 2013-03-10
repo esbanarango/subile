@@ -6,13 +6,17 @@ This is an experiment in music streaming. it uses the [Tinysong API](http://tiny
 
 ## Technologies
 
+##### Back-end
 * Node
 * Express
-* CoffeeScript
-* Jade
-* Connect Assets
 * MongoDB
 * Socket.io
+* CoffeeScript
+
+##### Front-end
+* Angular.js
+* Twitter Bootstrap
+
 
 ## Install and run it
 
@@ -22,7 +26,7 @@ Make sure you already have [NPM](http://npmjs.org/) and [mongoDB](http://www.mon
 >######mongoDB
 If you have [brew](http://mxcl.github.com/homebrew/) you can simply run:
 
->        $ brew install mongodb
+>     $ brew install mongodb
 >otherwise, go to http://www.mongodb.org/downloads.
 
 
