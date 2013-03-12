@@ -16,7 +16,8 @@
     "wrench": "1.4.4",
     "socket.io": "~0.9.13",
     "superagent": "~0.12.4",
-    "yaml-config": "~0.2.1"
+    "yaml-config": "~0.2.1",
+    "express-namespace": "~0.1.1"
   },
   "scripts": {
     "install": "node node_modules/coffee-script/bin/cake build",

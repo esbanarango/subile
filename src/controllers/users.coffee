@@ -1,47 +1,59 @@
 User = require '../models/user'
 
-# User model's CRUD controller.
-module.exports = 
+UsersController = (app) ->
 
-  # Lists all users
-  index: (req, res) ->
-    User.find {}, (err, users) ->
-      res.send users
-      
-  # Creates new user with data from `req.body`
-  create: (req, res) ->
-    user = new User req.body
-    user.save (err, user) ->
-      if not err
-        res.send user
-        res.statusCode = 201
-      else
-        res.send err
-        res.statusCode = 500
-        
-  # Gets user by id
-  get: (req, res) ->
-    User.findById req.params.id, (err, user) ->
-      if not err
-        res.send user
-      else
-        res.send err
-        res.statusCode = 500
-             
-  # Updates user with data from `req.body`
-  update: (req, res) ->
-    User.findByIdAndUpdate req.params.id, {"$set":req.body}, (err, user) ->
-      if not err
-        res.send user
-      else
-        res.send err
-        res.statusCode = 500
-    
-  # Deletes user by id
-  delete: (req, res) ->
-    User.findByIdAndRemove req.params.id, (err) ->
-      if not err
-        res.send {}
-      else
-        res.send err
-        res.statusCode = 500
+  app.namespace '/users', ->
+
+    # Returns the information of an user
+    # +URL+:: GET /users/+:id+
+    app.get '/:id', (req, res) ->
+      User.findById req.params.id, (err, user) ->
+        if not err
+          res.send user
+        else
+          res.send err
+          res.statusCode = 500
+
+    # Updates the information of an user
+    # +URL+:: PUT /users/+:id+
+    # +Params+::
+    #   - +user+ hash
+    app.put '/:id', (req, res) ->
+      User.findByIdAndUpdate req.params.id, {"$set":req.body.user}, (err, user) ->
+        if not err
+          res.send user
+        else
+          res.send err
+          res.statusCode = 500
+
+    # Destroys an user
+    # +URL+:: DELETE /users/+:id+
+    app.del '/:id', (req, res) ->
+      User.findByIdAndRemove req.params.id, (err) ->
+        if not err
+          res.send {}
+        else
+          res.send err
+          res.statusCode = 500
+
+    # Lists all users
+    # +URL+:: GET /users
+    app.get '/', (req, res) ->
+      User.find {}, (err, users) ->
+        res.send users
+
+    # Creates user
+    # +URL+:: POST /users
+    # +Params+::
+    #   - +user+ hash.
+    app.post '/', (req, res) ->
+      user = new User req.body.user
+      user.save (err, user) ->
+        if not err
+          res.send user
+          res.statusCode = 201
+        else
+          res.send err
+          res.statusCode = 500      
+
+module.exports = UsersController
