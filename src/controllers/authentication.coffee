@@ -7,6 +7,6 @@ AuthenticationController = (app) ->
   app.get '/login', (req, res) ->
     res.render 'authentication/login',
       title: 'Login'
-      csss: ['login']
+      csss: ['zocial','login']
 
 module.exports = AuthenticationController

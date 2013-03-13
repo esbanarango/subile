@@ -1,8 +1,11 @@
 extends ./../layout
 block content
   .login
-    h1 Login
-      form(method='post')
-        input(type='text', name='user[username]', placeholder='Username', required='required')
-        input(type='password', name='user[password]', placeholder='Password', required='required')
-        button.btn.btn-primary.btn-block.btn-large(type='submit') Let me in.
+    a(href='/auth/facebook',class='zocial facebook') Login with Facebook
+    hr
+    form(method='post')
+      input(type='text', name='user[username]', placeholder='Username', required='required')
+      input(type='password', name='user[password]', placeholder='Password', required='required')
+      button.btn.btn-primary.btn-block.btn-large(type='submit') Let me in.
+    .sing-up
+      a(href="/register") Sign up now with your email
