@@ -15,11 +15,20 @@ head
       display: none;
       }
   // CSS
-  != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css")
-  != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
-  != css("//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css")  
-  != css('app')
+  if css_general=null
+    != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css")
+    != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
+    != css("//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css")  
+    != css('app')
   
+  -var csss = csss || []
+  -each c in csss
+    case c
+      when 'zocial'
+        link(rel="stylesheet", href="/lib/css/zocial/zocial.css")          
+      default 
+        != css(c)
+
 body(ng-cloak='ng-cloak')
   block content
 

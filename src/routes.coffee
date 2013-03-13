@@ -8,4 +8,5 @@
 module.exports = (app) ->
 
   require('./controllers/application')(app)
+  require('./controllers/authentication')(app)
   require('./controllers/users')(app)
