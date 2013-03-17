@@ -15,11 +15,10 @@ head
       display: none;
       }
   // CSS
-  if css_general=null
-    != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css")
-    != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
-    != css("//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css")  
-    != css('app')
+  != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css")
+  != css("//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
+  != css("//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css")  
+  != css('app')
   
   -var csss = csss || []
   -each c in csss
@@ -45,6 +44,5 @@ body(ng-cloak='ng-cloak')
   != js("directives")
   != js("filters")
   != js("services")
-
 
 | </html>

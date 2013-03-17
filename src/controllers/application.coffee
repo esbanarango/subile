@@ -2,6 +2,9 @@
 
 ApplicationController = (app) ->
   app.get '/', (req, res) ->
+    if not (req.session.loggedIn)
+      res.redirect '/login'
+      return    
     res.render 'index'
 
 

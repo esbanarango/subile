@@ -1,0 +1,28 @@
+!!! 5
+//if lt IE 7 ]><html class="ie ie6" lang="en">
+//if IE 7 ]><html class="ie ie7" lang="en">
+//if IE 8 ]><html class="ie ie8" lang="en">
+// [if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]
+head
+  meta(charset='utf-8')
+  title Subile volumen
+  meta(name='description', content='')
+  meta(name='author', content='')
+  // Mobile Specific
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  // CSS
+  -var csss = csss || []
+  -each c in csss
+    case c
+      when 'zocial'
+        link(rel="stylesheet", href="/lib/css/zocial/zocial.css")          
+      default 
+        != css(c)
+
+body(ng-cloak='ng-cloak')
+  block content
+
+  // Load jQuery
+  != js('//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+
+| </html>

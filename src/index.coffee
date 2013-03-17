@@ -19,10 +19,8 @@ config = require "./config"
 app.configure 'production', 'development', 'testing', ->
 	config.setEnvironment app.settings.env
 
-# db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
-# mongoose.connect db_config
-
-mongoose.connect 'mongodb://localhost/example'
+db_config = "mongodb://#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
+mongoose.connect db_config
 
 
 #### View initialization 
@@ -37,7 +35,8 @@ app.set 'view engine', 'jade'
 
 # [Body parser middleware](http://www.senchalabs.org/connect/middleware-bodyParser.html) parses JSON or XML bodies into `req.body` object
 app.use express.bodyParser()
-
+app.use express.cookieParser()
+app.use express.session({ secret: 'supercalifrajilisticoespiralidoso' })
 
 #### Finalization
 # Initialize routes
