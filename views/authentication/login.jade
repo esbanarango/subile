@@ -1,6 +1,9 @@
 extends ./../layout-presentation
 block content
+
   .login
+    #logo
+      img(src='./images/subile-front.png', alt='icon', width='350px', height='165px', style='')
     a(href='/auth/facebook',class='zocial facebook') Login with Facebook
     hr
     form(method='post')
@@ -9,3 +12,10 @@ block content
       button.btn.btn-primary.btn-block.btn-large(type='submit') Let me in.
     .sing-up
       a(href="/register") Sign up now with your email
+
+  script(type="text/javascript")
+    var toggleColor = function(){
+      $('#logo').find('img').toggleClass('color2');
+
+    }
+    setInterval(toggleColor, 3000)

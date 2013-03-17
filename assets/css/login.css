@@ -28,15 +28,40 @@ body {
 .login { 
   // background-color: rgba(240,240,249,0.1);
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   margin: -150px 0 0 -150px;
   width:300px;
-  height:300px;
+  height:500px;
 }
 .sing-up { margin-top: 5px; text-align: right;}
 .sing-up a{color: #fff; font-size: 10px;text-decoration: none;}
 .sing-up a:hover{color: #bbb;}
+
+#logo{
+  max-width: 175px; 
+  height: 175px; 
+  margin:0 auto; 
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#logo img{
+  position: absolute; 
+  top: 0; 
+  left: 0px;
+}
+#logo .color2{
+  left: -180px;
+}
+
+
+.stretchy {display:block; float:left; position:relative; overflow:hidden; max-width:160px;}
+.stretchy .spacer {width: 100%; height: auto;}
+.stretchy .sprite {position:absolute; top:0; left:0; max-width:none; max-height:100%;}
+.stretchy .sprite.s2 {left:-100%;}
+.stretchy .sprite.s3 {left:-200%;}
 
 .zocial {
   width: 100% !important;
@@ -63,12 +88,11 @@ input {
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
-
 hr{
-    border: 0;
-    height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0));
-    background-image:    -moz-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0)); 
-    background-image:     -ms-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0)); 
-    background-image:      -o-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0)); 
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0));
+  background-image:    -moz-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0)); 
+  background-image:     -ms-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0)); 
+  background-image:      -o-linear-gradient(left, rgba(250,250,250,0), rgba(250,250,250,0.75), rgba(250,250,250,0)); 
 }
