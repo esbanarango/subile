@@ -3,6 +3,7 @@ require('express-namespace')
 express   = require 'express'
 stylus    = require 'stylus'
 assets    = require 'connect-assets'
+flash     = require 'connect-flash'
 mongoose  = require 'mongoose'
 
 #### Basic application initialization
@@ -37,6 +38,7 @@ app.set 'view engine', 'jade'
 app.use express.bodyParser()
 app.use express.cookieParser()
 app.use express.session({ secret: 'supercalifrajilisticoespiralidoso' })
+app.use flash()
 
 #### Finalization
 # Initialize routes

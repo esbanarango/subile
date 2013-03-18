@@ -2,6 +2,7 @@ mongoose = require 'mongoose'
 
 # User model
 User = new mongoose.Schema(
+  username: {type: String, unique: true}
   email: {type: String, unique: true}
   password: {type: String, index: true}
   first_name: String

@@ -13,6 +13,11 @@ block content
     .sing-up
       a(href="/register") Sign up now with your email
 
+  - if (message)
+    != "<script type='text/javascript'>"
+    != "console.log('"+message+"')"
+    != "</script>"
+
   script(type="text/javascript")
     var toggleColor = function(){
       $('#logo').find('img').toggleClass('color2');
