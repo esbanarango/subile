@@ -51,3 +51,7 @@ Pull requests are welcome!
 
 ## Author
 This was written by [Esteban Arango Medina](http://twitter.com/esbanarango).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/esbanarango/subile/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
